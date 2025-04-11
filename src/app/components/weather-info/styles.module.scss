@@ -1,0 +1,33 @@
+.weatherInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  padding: 32px;
+  width: 100%;
+  box-shadow: hsla(220, 30%, 5%, 0.1) 0px 0px 15px;
+  background-color: white;
+  border-radius: 12px;
+  max-width: 60%;
+
+  h5 {
+    display: flex;
+    justify-content: center;
+    grid-column: span 2;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .iconContainer {
+    display: flex;
+    justify-content: center;
+
+    svg {
+      width: 40%;
+      height: auto;
+    }
+  }
+}
