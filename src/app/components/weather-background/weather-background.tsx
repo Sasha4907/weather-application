@@ -2,10 +2,16 @@
 
 import { JSX, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
-import { AcUnit as SnowIcon, WaterDrop as RainIcon, Cloud as CloudIcon } from '@mui/icons-material';
+import {
+  AcUnit as SnowIcon,
+  WaterDrop as RainIcon,
+  Cloud as CloudIcon,
+  Sunny as SunnyIcon,
+  Bolt as BoltIcon,
+} from '@mui/icons-material';
 
 interface WeatherBackgroundProps {
-  description: 'rain' | 'snow' | 'clouds' | 'clear' | string;
+  description: 'rain' | 'snow' | 'clouds' | 'clear' | 'thunderstorm' | string;
 }
 
 const WeatherBackground: React.FC<WeatherBackgroundProps> = ({ description }) => {
@@ -27,6 +33,8 @@ const WeatherBackground: React.FC<WeatherBackgroundProps> = ({ description }) =>
           return <SnowIcon key={i} className={styles.snowflake} style={style} />;
         } else if (weatherType === 'rain') {
           return <RainIcon key={i} className={styles.raindrop} style={style} />;
+        } else if (weatherType === 'clouds') {
+          return <BoltIcon key={i} className={styles.bolt} style={style} fontSize="large" />
         } else if (weatherType === 'clouds') {
           if (i < CLOUD_COUNT) {
             const cloudStyle = {
@@ -52,7 +60,11 @@ const WeatherBackground: React.FC<WeatherBackgroundProps> = ({ description }) =>
 
   return (
     <div className={styles.background}>
-      {weatherType === 'clear' && <div className={styles.sun} />}
+      {weatherType === 'clear' && (
+        <div className={styles.sun}>
+          <SunnyIcon />
+        </div>
+      )}
       {icons}
     </div>
   );

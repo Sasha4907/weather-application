@@ -6,7 +6,8 @@
   overflow: hidden;
 
   .snowflake,
-  .raindrop {
+  .raindrop,
+  .bolt {
     position: absolute;
     top: -5%;
     color: #1976d2;
@@ -25,6 +26,10 @@
         opacity: 0.2;
       }
     }
+  }
+
+  .bolt {
+    color: #ffee00;
   }
 
   .clouds {
@@ -53,10 +58,22 @@
   position: absolute;
   top: 10%;
   left: 10%;
-  width: 140px;
-  height: 140px;
-  background-color: #ffee00;
-  border-radius: 50%;
-  box-shadow: 0 0 100px 10px #ffee00;
   z-index: -1;
+
+  svg {
+    width: 160px;
+    height: 160px;
+    color: #ffee00;
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }

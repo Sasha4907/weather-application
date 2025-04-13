@@ -1,26 +1,21 @@
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import CloudIcon from '@mui/icons-material/Cloud';
-import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import GrainIcon from '@mui/icons-material/Grain';
-import CloudySnowingIcon from '@mui/icons-material/CloudySnowing';
+import { AcUnit, Cloud, CloudySnowing, Grain, Thunderstorm, WbSunny } from "@mui/icons-material";
 
 const getWeatherIcon = (weather: string) => {
   switch (weather.toLowerCase()) {
     case 'clear':
-      return <WbSunnyIcon color="primary" fontSize="large" />;
+      return <WbSunny color="primary" fontSize="large" />;
     case 'clouds':
-      return <CloudIcon color="primary" fontSize="large" />;
+      return <Cloud color="primary" fontSize="large" />;
     case 'thunderstorm':
-      return <ThunderstormIcon color="primary" fontSize="large" />;
+      return <Thunderstorm color="primary" fontSize="large" />;
     case 'snow':
-      return <AcUnitIcon color="primary" fontSize="large" />;
+      return <AcUnit color="primary" fontSize="large" />;
     case 'rain':
-      return <CloudySnowingIcon color="primary" fontSize="large" />;
+      return <CloudySnowing color="primary" fontSize="large" />;
     case 'drizzle':
-      return <GrainIcon color="primary" fontSize="large" />;
+      return <Grain color="primary" fontSize="large" />;
     default:
-      return <CloudIcon color="primary" fontSize="large" />;
+      return <Cloud color="primary" fontSize="large" />;
   }
 };
 
