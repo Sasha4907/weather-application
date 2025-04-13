@@ -33,7 +33,7 @@ const WeatherBackground: React.FC<WeatherBackgroundProps> = ({ description }) =>
           return <SnowIcon key={i} className={styles.snowflake} style={style} />;
         } else if (weatherType === 'rain') {
           return <RainIcon key={i} className={styles.raindrop} style={style} />;
-        } else if (weatherType === 'clouds') {
+        } else if (weatherType === 'thunderstorm') {
           return <BoltIcon key={i} className={styles.bolt} style={style} fontSize="large" />
         } else if (weatherType === 'clouds') {
           if (i < CLOUD_COUNT) {
